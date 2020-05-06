@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.luv2code.ecommerce.entity.Product;
 import com.luv2code.ecommerce.projection.ProductProjection;
 
-@CrossOrigin("http://localhost:4200")
+//@CrossOrigin("http://localhost:4200")
+@CrossOrigin
 @RepositoryRestResource(excerptProjection = ProductProjection.class)
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
