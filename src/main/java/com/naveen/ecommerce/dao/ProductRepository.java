@@ -1,4 +1,4 @@
-package com.luv2code.ecommerce.dao;
+package com.naveen.ecommerce.dao;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -7,10 +7,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.luv2code.ecommerce.entity.Product;
-import com.luv2code.ecommerce.projection.ProductProjection;
+import com.naveen.ecommerce.entity.Product;
+import com.naveen.ecommerce.projection.ProductProjection;
 
-//@CrossOrigin("http://localhost:4200")
 @CrossOrigin
 @RepositoryRestResource(excerptProjection = ProductProjection.class)
 public interface ProductRepository extends JpaRepository<Product, Long> {

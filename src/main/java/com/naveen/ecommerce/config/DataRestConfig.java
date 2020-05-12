@@ -1,14 +1,15 @@
-package com.luv2code.ecommerce.config;
+package com.naveen.ecommerce.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
 
-import com.luv2code.ecommerce.entity.Product;
+import com.naveen.ecommerce.entity.Product;
+import com.naveen.ecommerce.entity.ProductCategory;
 
 @Configuration
-public class MyDataRestConfig implements RepositoryRestConfigurer {
+public class DataRestConfig implements RepositoryRestConfigurer {
 
 	@Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
@@ -21,19 +22,11 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 				.withCollectionExposure((metadata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
 
 		// disable Http methods for ProductCategory: PUT, POST and DELETE
-		/*
-		 * config.getExposureConfiguration().forDomainType(ProductCategory.class)
-		 * .withItemExposure((metadata, httpMethods) ->
-		 * httpMethods.disable(theUnsupportedActions))
-		 * .withCollectionExposure((metadata, httpMethods) ->
-		 * httpMethods.disable(theUnsupportedActions));
-		 */
+		config.getExposureConfiguration().forDomainType(ProductCategory.class)
+				.withItemExposure((metadata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
+				.withCollectionExposure((metadata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
 
-		// Another way: Override the default implementation of JPA and flag exported as
-		// false.
-		// @Override
-		// @RestResource(exported = false)
-		// void deleteById(Long aLong);
+		config.exposeIdsFor(Product.class, ProductCategory.class);
 	}
 
 }
