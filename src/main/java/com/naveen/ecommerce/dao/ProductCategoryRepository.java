@@ -1,4 +1,4 @@
-package com.luv2code.ecommerce.dao;
+package com.naveen.ecommerce.dao;
 
 import java.util.List;
 
@@ -7,10 +7,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import com.luv2code.ecommerce.entity.ProductCategory;
-import com.luv2code.ecommerce.projection.ProductCategoryProjection;
+import com.naveen.ecommerce.entity.ProductCategory;
+import com.naveen.ecommerce.projection.ProductCategoryProjection;
 
-//@CrossOrigin("http://localhost:4200")
 @CrossOrigin
 @RepositoryRestResource(collectionResourceRel = "productCategory", path = "product-category", excerptProjection = ProductCategoryProjection.class)
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {

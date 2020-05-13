@@ -1,11 +1,11 @@
-package com.luv2code.ecommerce.projection;
+package com.naveen.ecommerce.projection;
 
 import java.util.Set;
 
 import org.springframework.data.rest.core.config.Projection;
 
-import com.luv2code.ecommerce.entity.Product;
-import com.luv2code.ecommerce.entity.ProductCategory;
+import com.naveen.ecommerce.entity.Product;
+import com.naveen.ecommerce.entity.ProductCategory;
 
 @Projection(name = "productCategory", types = ProductCategory.class)
 public interface ProductCategoryProjection {

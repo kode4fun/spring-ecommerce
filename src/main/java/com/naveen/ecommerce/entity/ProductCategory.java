@@ -1,4 +1,4 @@
-package com.luv2code.ecommerce.entity;
+package com.naveen.ecommerce.entity;
 
 import java.util.Set;
 
@@ -16,7 +16,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "product_category")
-// @Data - known bug with @ManyToOne and @OneToMany. Instead use below
+// @Data - known bug with @ManyToOne and @OneToMany. Instead use @Getter @Setter
 @Getter
 @Setter
 public class ProductCategory {
